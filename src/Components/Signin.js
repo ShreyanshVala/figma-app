@@ -11,6 +11,8 @@ import FormHelperText from "@mui/material/FormHelperText";
 import greenImg from "../Images/green.jpg";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
+import GoogleButton from "react-google-button";
+import AppleIcon from "@mui/icons-material/Apple";
 
 export const Signin = () => {
   const dispatch = useDispatch();
@@ -67,11 +69,11 @@ export const Signin = () => {
           textAlign: "left",
         }}
       >
-        <Typography variant="h4" mt={24}>
+        <Typography variant="h5" mt={24}>
           Welcome back!
         </Typography>
 
-        <Typography variant="subtitle1" mb={6} sx={{ fontWeight: "bold" }}>
+        <Typography variant="subtitle1" mb={3} sx={{ fontWeight: "bold" }}>
           Enter your Credentials to access your account
         </Typography>
 
@@ -81,12 +83,11 @@ export const Signin = () => {
 
         <FormControl error variant="standard" mt={6} fullWidth>
           <TextField
-            sx={{ width: "500px" }}
+            sx={{ width: "400px" }}
             id="outlined-email-input"
             label="Email"
             margin="normal"
             value={email}
-            mt={5}
             onChange={onchangeEmailError}
             error={!!emailError}
           />
@@ -105,7 +106,7 @@ export const Signin = () => {
 
         <FormControl error variant="standard" fullWidth>
           <TextField
-            sx={{ width: "500px" }}
+            sx={{ width: "400px" }}
             id="outlined-password-input"
             label="Password"
             type="password"
@@ -121,7 +122,7 @@ export const Signin = () => {
         </FormControl>
 
         <FormControlLabel
-          mb={2}
+          mb={30}
           control={<Checkbox defaultChecked />}
           label="Remember for 30 days"
         />
@@ -129,7 +130,7 @@ export const Signin = () => {
         <Button
           variant="contained"
           sx={{
-            width: "500px",
+            width: "400px",
             backgroundColor: "green",
             "&:hover": {
               backgroundColor: "darkgreen",
@@ -139,31 +140,21 @@ export const Signin = () => {
         >
           Login
         </Button>
-        <p>
-          _____________________________________or____________________________________
-        </p>
+        <p>________________________________or____________________________</p>
 
         <Box display="flex" gap={2}>
-          <Button
-            variant="contained"
-            sx={{
-              width: "239px",
-              backgroundColor: "white",
-              color: "black",
-              "&:hover": {
-                backgroundColor: "black",
-                color: "white",
-              },
+          <GoogleButton
+            onClick={() => {
+              console.log("Google button clicked");
             }}
-          >
-            Sign in with Google
-          </Button>
+          />
 
           <Button
             variant="contained"
+            startIcon={<AppleIcon />}
             sx={{
               width: "239px",
-              paddingRight: "15px",
+              paddingRight: "20px",
               backgroundColor: "white",
               color: "black",
               "&:hover": {

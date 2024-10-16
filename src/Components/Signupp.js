@@ -11,6 +11,8 @@ import { Link, useNavigate } from "react-router-dom";
 import greenImg from "../Images/green.jpg";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
+import GoogleButton from "react-google-button";
+import AppleIcon from "@mui/icons-material/Apple";
 
 export const Signupp = () => {
   const [name, setName] = useState("");
@@ -86,72 +88,93 @@ export const Signupp = () => {
           Get Started Now
         </Typography>
 
-        <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-          Name
-        </Typography>
-        <FormControl error variant="standard" fullWidth>
-          <TextField
-            sx={{ width: "500px" }}
-            id="outlined-name-input"
-            label="Name"
-            margin="normal"
-            value={name}
-            onChange={onchangeNameError}
-            error={!!nameError}
-          />
-          <FormHelperText sx={{ marginTop: "-7px" }} id="component-error-text">
-            {nameError}
-          </FormHelperText>
-        </FormControl>
-
-        <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-          Email address
-        </Typography>
-
-        <FormControl error variant="standard" mt={6} fullWidth>
-          <TextField
-            sx={{ width: "500px" }}
-            id="outlined-email-input"
-            label="Email"
-            margin="normal"
-            value={email}
-            mt={5}
-            onChange={onchangeEmailError}
-            error={!!emailError}
-          />
-          <FormHelperText sx={{ marginTop: "-7px" }} id="component-error-text">
-            {emailError}
-          </FormHelperText>
-        </FormControl>
-
-        <Typography
-          variant="subtitle1"
-          gutterBottom
-          sx={{ fontWeight: "bold" }}
+        <Box
+          sx={{
+            width: "300px",
+          }}
         >
-          Password
-        </Typography>
-        <FormControl error variant="standard" fullWidth>
-          <TextField
-            sx={{ width: "500px" }}
-            id="outlined-password-input"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-            margin="normal"
-            value={password}
-            onChange={onChangePasswordError}
-            error={!!passwordError}
-          />
-          <FormHelperText sx={{ marginTop: "-7px" }} id="component-error-text">
-            {passwordError}
-          </FormHelperText>
-        </FormControl>
+          <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+            Name
+          </Typography>
+          <FormControl error variant="standard" fullWidth>
+            <TextField
+              sx={{ width: "500px" }}
+              id="outlined-name-input"
+              label="Name"
+              margin="normal"
+              value={name}
+              onChange={onchangeNameError}
+              error={!!nameError}
+            />
+            <FormHelperText
+              sx={{ marginTop: "-7px" }}
+              id="component-error-text"
+            >
+              {nameError}
+            </FormHelperText>
+          </FormControl>
+        </Box>
+
+        <Box>
+          <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+            Email address
+          </Typography>
+
+          <FormControl error variant="standard" mt={6} fullWidth>
+            <TextField
+              sx={{ width: "500px" }}
+              id="outlined-email-input"
+              label="Email"
+              margin="normal"
+              value={email}
+              mt={5}
+              onChange={onchangeEmailError}
+              error={!!emailError}
+            />
+            <FormHelperText
+              sx={{ marginTop: "-7px" }}
+              id="component-error-text"
+            >
+              {emailError}
+            </FormHelperText>
+          </FormControl>
+        </Box>
+
+        <Box>
+          <Typography
+            variant="subtitle1"
+            gutterBottom
+            sx={{ fontWeight: "bold" }}
+          >
+            Password
+          </Typography>
+          <FormControl error variant="standard" fullWidth>
+            <TextField
+              sx={{ width: "500px" }}
+              id="outlined-password-input"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              margin="normal"
+              value={password}
+              onChange={onChangePasswordError}
+              error={!!passwordError}
+            />
+            <FormHelperText
+              sx={{ marginTop: "-7px" }}
+              id="component-error-text"
+            >
+              {passwordError}
+            </FormHelperText>
+          </FormControl>
+        </Box>
 
         <FormControlLabel
+          mt={3}
           control={<Checkbox defaultChecked />}
           label="I agree to the terms & policy"
         />
+
         <br />
         <Button
           variant="contained"
@@ -171,24 +194,18 @@ export const Signupp = () => {
         </p>
 
         <Box display="flex" gap={2}>
-          <Button
-            variant="contained"
-            sx={{
-              width: "239px",
-              backgroundColor: "white",
-              color: "black",
-              "&:hover": {
-                backgroundColor: "black",
-                color: "white",
-              },
+          <GoogleButton
+            onClick={() => {
+              console.log("Google button clicked");
             }}
-          >
-            Sign in with Google
-          </Button>
+          />
+
           <Button
             variant="contained"
+            startIcon={<AppleIcon />}
             sx={{
               width: "239px",
+              paddingRight: "20px",
               backgroundColor: "white",
               color: "black",
               "&:hover": {
