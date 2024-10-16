@@ -60,7 +60,7 @@ export const Signin = () => {
         justifyContent: "space-between",
         alignItems: "center",
         height: "100vh",
-        px: 19,
+        px: 22,
       }}
     >
       <Box
@@ -142,7 +142,7 @@ export const Signin = () => {
         </Button>
         <p>________________________________or____________________________</p>
 
-        <Box display="flex" gap={2}>
+        <Box display="flex" gap={2} justifyContentleft="2000r">
           <GoogleButton
             onClick={() => {
               console.log("Google button clicked");

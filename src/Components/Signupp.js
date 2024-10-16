@@ -84,7 +84,7 @@ export const Signupp = () => {
           textAlign: "left",
         }}
       >
-        <Typography variant="h4" mt={20} gutterBottom>
+        <Typography variant="h5" mt={20} gutterBottom>
           Get Started Now
         </Typography>
 
@@ -239,7 +239,7 @@ export const Signupp = () => {
 
       <Box
         sx={{
-          width: "30%",
+          width: "25%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -248,7 +248,7 @@ export const Signupp = () => {
         <img
           src={greenImg}
           alt="Sign in illustration"
-          style={{ maxWidth: "180%", maxheight: "100%" }}
+          style={{ maxWidth: "500px" }}
         />
       </Box>
     </Box>
