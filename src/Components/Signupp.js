@@ -74,17 +74,21 @@ export const Signupp = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        height: "100vh",
-        px: 22,
+        // height: "100vh",
+        // px: 22,
       }}
     >
       <Box
         sx={{
-          width: "560px",
+          justifyContent: "center",
+          alignItems: "center",
           textAlign: "left",
+          paddingLeft: 20,
+          // width: "560px",
+          // textAlign: "left",
         }}
       >
-        <Typography variant="h5" mt={20} gutterBottom>
+        <Typography variant="h4" mt={1} gutterBottom>
           Get Started Now
         </Typography>
 
@@ -101,15 +105,12 @@ export const Signupp = () => {
               sx={{ width: "500px" }}
               id="outlined-name-input"
               label="Name"
-              margin="normal"
+              // margin="normal"
               value={name}
               onChange={onchangeNameError}
               error={!!nameError}
             />
-            <FormHelperText
-              sx={{ marginTop: "-7px" }}
-              id="component-error-text"
-            >
+            <FormHelperText sx={{ marginTop: "0px" }} id="component-error-text">
               {nameError}
             </FormHelperText>
           </FormControl>
@@ -125,16 +126,13 @@ export const Signupp = () => {
               sx={{ width: "500px" }}
               id="outlined-email-input"
               label="Email"
-              margin="normal"
+              // margin="normal"
               value={email}
               mt={5}
               onChange={onchangeEmailError}
               error={!!emailError}
             />
-            <FormHelperText
-              sx={{ marginTop: "-7px" }}
-              id="component-error-text"
-            >
+            <FormHelperText sx={{ marginTop: "0px" }} id="component-error-text">
               {emailError}
             </FormHelperText>
           </FormControl>
@@ -155,15 +153,12 @@ export const Signupp = () => {
               label="Password"
               type="password"
               autoComplete="current-password"
-              margin="normal"
+              // margin="normal"
               value={password}
               onChange={onChangePasswordError}
               error={!!passwordError}
             />
-            <FormHelperText
-              sx={{ marginTop: "-7px" }}
-              id="component-error-text"
-            >
+            <FormHelperText sx={{ marginTop: "0px" }} id="component-error-text">
               {passwordError}
             </FormHelperText>
           </FormControl>
@@ -237,18 +232,11 @@ export const Signupp = () => {
         </Typography>
       </Box>
 
-      <Box
-        sx={{
-          width: "25%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <Box>
         <img
           src={greenImg}
           alt="Sign in illustration"
-          style={{ maxWidth: "500px" }}
+          style={{ maxWidth: "100vw", maxHeight: "100vh" }}
         />
       </Box>
     </Box>

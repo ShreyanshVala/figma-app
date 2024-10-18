@@ -59,17 +59,20 @@ export const Signin = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        height: "100vh",
-        px: 22,
       }}
     >
       <Box
         sx={{
-          width: "560px",
+          // flex: 2,
+          // display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          // width: "560px",
           textAlign: "left",
+          paddingLeft: 20,
         }}
       >
-        <Typography variant="h5" mt={24}>
+        <Typography variant="h5" mt={1}>
           Welcome back!
         </Typography>
 
@@ -83,15 +86,15 @@ export const Signin = () => {
 
         <FormControl error variant="standard" mt={6} fullWidth>
           <TextField
-            sx={{ width: "400px" }}
+            sx={{ width: "500px" }}
             id="outlined-email-input"
             label="Email"
-            margin="normal"
+            // margin="normal"
             value={email}
             onChange={onchangeEmailError}
             error={!!emailError}
           />
-          <FormHelperText sx={{ marginTop: "-7px" }} id="component-error-text">
+          <FormHelperText sx={{ marginTop: "0px" }} id="component-error-text">
             {emailError}
           </FormHelperText>
         </FormControl>
@@ -106,17 +109,17 @@ export const Signin = () => {
 
         <FormControl error variant="standard" fullWidth>
           <TextField
-            sx={{ width: "400px" }}
+            sx={{ width: "500px" }}
             id="outlined-password-input"
             label="Password"
             type="password"
             autoComplete="current-password"
-            margin="normal"
+            // margin="normal"
             value={password}
             onChange={onChangePasswordError}
             error={!!passwordError}
           />
-          <FormHelperText sx={{ marginTop: "-7px" }} id="component-error-text">
+          <FormHelperText sx={{ marginTop: "0px" }} id="component-error-text">
             {passwordError}
           </FormHelperText>
         </FormControl>
@@ -130,7 +133,7 @@ export const Signin = () => {
         <Button
           variant="contained"
           sx={{
-            width: "400px",
+            width: "500px",
             backgroundColor: "green",
             "&:hover": {
               backgroundColor: "darkgreen",
@@ -140,9 +143,11 @@ export const Signin = () => {
         >
           Login
         </Button>
-        <p>________________________________or____________________________</p>
+        <p>
+          ______________________________________or__________________________________
+        </p>
 
-        <Box display="flex" gap={2} justifyContentleft="2000r">
+        <Box display="flex" gap={2}>
           <GoogleButton
             onClick={() => {
               console.log("Google button clicked");
@@ -169,10 +174,10 @@ export const Signin = () => {
         <br></br>
         <Typography
           sx={{
-            marginTop: "40px",
+            marginTop: "1px",
             textAlign: "center",
             fontWeight: "bold",
-            marginRight: "80px",
+            marginRight: "170px",
           }}
         >
           Don't Have an account?{" "}
@@ -182,18 +187,11 @@ export const Signin = () => {
         </Typography>
       </Box>
 
-      <Box
-        sx={{
-          width: "30%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <Box>
         <img
           src={greenImg}
           alt="Sign in illustration"
-          style={{ maxWidth: "1500px", height: "700px" }}
+          style={{ maxWidth: "100vw", maxHeight: "100vh" }}
         />
       </Box>
     </Box>
