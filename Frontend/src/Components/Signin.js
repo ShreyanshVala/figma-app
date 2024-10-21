@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
 import GoogleButton from "react-google-button";
 import AppleIcon from "@mui/icons-material/Apple";
+import axios from "axios";
 
 export const Signin = () => {
   const dispatch = useDispatch();
@@ -47,10 +48,20 @@ export const Signin = () => {
       return;
     }
 
-    dispatch(setUser({ email, password }));
-
-    navigate("/dashboard");
-    // navigate("/dashboard", { replace: true });
+    try {
+      const response = await axios.post("http://localhost:3000/create", {
+        email,
+        password,
+      });
+      if (response.status === 201) {
+        // Assuming the user creation is successful
+        dispatch(setUser({ email, password }));
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.error("Error while creating user:", error);
+      // Handle errors, for example, show error messages to users
+    }
   };
 
   return (
