@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const signinRoute = require("./routes/signinRoute");
+const signinRouter = require("./routes/signinRoute");
 app.use(express.json());
 
 mongoose
@@ -20,4 +20,4 @@ mongoose
     console.log("error", error);
   });
 
-app.use(signinRoute);
+app.use(signinRouter);
